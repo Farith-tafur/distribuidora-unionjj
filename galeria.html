@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#FF0A0A" />
+    <meta
+      name="description"
+      content="Galería de Distribuidora UniónJJ Iquitos - Conoce nuestro local y productos."
+    />
+    <meta
+      name="keywords"
+      content="galería, fotos, distribuidora, UniónJJ, Iquitos"
+    />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-Frame-Options" content="DENY" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+    <title>Galería - Distribuidora UniónJJ Iquitos</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Oswald:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/estilo.css" />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="header" id="header">
+      <div class="container">
+        <div class="header-contenido">
+          <a
+            href="index.html"
+            class="logo"
+            aria-label="Distribuidora UniónJJ Iquitos - Inicio"
+          >
+            <div class="logo-marca">
+              <img
+                src="img/logo.png"
+                alt="Distribuidora UniónJJ"
+                class="logo-imagen"
+              />
+            </div>
+            <div class="logo-texto">
+              <span class="logo-nombre">Distribuidora</span>
+              <span class="logo-marca-nombre">UniónJJ</span>
+              <span class="logo-ciudad">Iquitos</span>
+            </div>
+          </a>
+
+          <nav
+            class="nav-principal"
+            id="navPrincipal"
+            aria-label="Navegación principal"
+          >
+            <ul class="nav-menu">
+              <li><a href="index.html">Inicio</a></li>
+              <li><a href="nosotros.html">Nosotros</a></li>
+              <li><a href="servicios.html">Productos</a></li>
+              <li><a href="galeria.html" class="activo">Galería</a></li>
+              <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+          </nav>
+
+          <div class="acciones-header">
+            <a
+              href="https://wa.me/51935971893"
+              target="_blank"
+              rel="noopener"
+              class="btn-whatsapp-header"
+              aria-label="Contactar por WhatsApp"
+            >
+              <i class="fab fa-whatsapp"></i>
+              <span class="btn-texto">Contactar</span>
+            </a>
+            <button
+              class="btn-menu-mobile"
+              id="btnMenuMobile"
+              aria-label="Abrir menú"
+            >
+              <i class="fas fa-bars"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- HERO INTERNO -->
+    <section class="pagina-hero">
+      <div class="pagina-hero-overlay"></div>
+      <div class="container">
+        <div class="pagina-hero-contenido">
+          <h1>Galería</h1>
+        </div>
+      </div>
+    </section>
+
+    <!-- FILTROS -->
+    <section class="galeria-filtros">
+      <div class="container">
+        <div class="filtros-contenedor">
+          <button class="filtro-btn activo" data-filtro="todos">Todos</button>
+          <button class="filtro-btn" data-filtro="local">Local</button>
+          <button class="filtro-btn" data-filtro="productos">Productos</button>
+          <button class="filtro-btn" data-filtro="atencion">Atención</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERÍA -->
+    <section class="galeria-completa">
+      <div class="container">
+        <div class="galeria-grid-completo" id="galeriaGrid">
+          <div class="galeria-completa-item reveal" data-categoria="local">
+            <div class="placeholder-img placeholder-galeria">
+              <i class="fas fa-store"></i>
+              <span>Nuestro Local</span>
+            </div>
+            <div class="galeria-completa-overlay">
+              <h4>Fachada</h4>
+              <p>Putumayo 638</p>
+            </div>
+          </div>
+
+          <div class="galeria-completa-item reveal" data-categoria="local">
+            <div class="placeholder-img placeholder-galeria">
+              <i class="fas fa-door-open"></i>
+              <span>Interior</span>
+            </div>
+            <div class="galeria-completa-overlay">
+              <h4>Interior</h4>
+              <p>Nuestro espacio</p>
+            </div>
+          </div>
+
+          <div class="galeria-completa-item reveal" data-categoria="productos">
+            <div class="placeholder-img placeholder-galeria">
+              <i class="fas fa-tshirt"></i>
+              <span>Uniformes</span>
+            </div>
+            <div class="galeria-completa-overlay">
+              <h4>Uniformes</h4>
+              <p>Escolares y más</p>
+            </div>
+          </div>
+
+          <div class="galeria-completa-item reveal" data-categoria="productos">
+            <div class="placeholder-img placeholder-galeria">
+              <i class="fas fa-cookie-bite"></i>
+              <span>Snacks</span>
+            </div>
+            <div class="galeria-completa-overlay">
+              <h4>Snacks</h4>
+              <p>Variedad de galletas</p>
+            </div>
+          </div>
+
+          <div class="galeria-completa-item reveal" data-categoria="productos">
+            <div class="placeholder-img placeholder-galeria">
+              <i class="fas fa-wine-bottle"></i>
+              <span>Bebidas</span>
+            </div>
+            <div class="galeria-completa-overlay">
+              <h4>Bebidas</h4>
+              <p>Refrescantes y variadas</p>
+            </div>
+          </div>
+
+          <div class="galeria-completa-item reveal" data-categoria="productos">
+            <div class="placeholder-img placeholder-galeria">
+              <i class="fas fa-birthday-cake"></i>
+              <span>Dulces</span>
+            </div>
+            <div class="galeria-completa-overlay">
+              <h4>Dulces</h4>
+              <p>Para endulzar el día</p>
+            </div>
+          </div>
+
+          <div class="galeria-completa-item reveal" data-categoria="atencion">
+            <div class="placeholder-img placeholder-galeria">
+              <i class="fas fa-cash-register"></i>
+              <span>Área de Pago</span>
+            </div>
+            <div class="galeria-completa-overlay">
+              <h4>Atención</h4>
+              <p>Servicio rápido</p>
+            </div>
+          </div>
+
+          <div class="galeria-completa-item reveal" data-categoria="atencion">
+            <div class="placeholder-img placeholder-galeria">
+              <i class="fas fa-shopping-bag"></i>
+              <span>Empaque</span>
+            </div>
+            <div class="galeria-completa-overlay">
+              <h4>Empaque</h4>
+              <p>Cuidamos cada pedido</p>
+            </div>
+          </div>
+
+          <div class="galeria-completa-item reveal" data-categoria="productos">
+            <div class="placeholder-img placeholder-galeria">
+              <i class="fas fa-boxes"></i>
+              <span>Stock</span>
+            </div>
+            <div class="galeria-completa-overlay">
+              <h4>Stock</h4>
+              <p>Productos disponibles</p>
+            </div>
+          </div>
+
+          <div class="galeria-completa-item reveal" data-categoria="local">
+            <div class="placeholder-img placeholder-galeria">
+              <i class="fas fa-shelves"></i>
+              <span>Estanterías</span>
+            </div>
+            <div class="galeria-completa-overlay">
+              <h4>Estanterías</h4>
+              <p>Todo organizado</p>
+            </div>
+          </div>
+
+          <div class="galeria-completa-item reveal" data-categoria="atencion">
+            <div class="placeholder-img placeholder-galeria">
+              <i class="fas fa-users"></i>
+              <span>Equipo</span>
+            </div>
+            <div class="galeria-completa-overlay">
+              <h4>Nuestro Equipo</h4>
+              <p>Listos para atenderte</p>
+            </div>
+          </div>
+
+          <div class="galeria-completa-item reveal" data-categoria="local">
+            <div class="placeholder-img placeholder-galeria">
+              <i class="fas fa-sign"></i>
+              <span>Letrero</span>
+            </div>
+            <div class="galeria-completa-overlay">
+              <h4>Nuestro Letrero</h4>
+              <p>Siempre visibles</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-final">
+      <div class="container">
+        <div class="cta-contenido reveal">
+          <div class="cta-texto">
+            <h2>¿Quieres visitarnos?</h2>
+            <p>Te esperamos con los brazos abiertos en nuestro local</p>
+          </div>
+          <div class="cta-botones">
+            <a
+              href="https://wa.me/51935971893"
+              target="_blank"
+              rel="noopener"
+              class="btn-blanco-grande"
+            >
+              <i class="fab fa-whatsapp"></i> WhatsApp: 935 971 893
+            </a>
+            <a href="contacto.html" class="btn-outline-blanco">
+              <i class="fas fa-map-marker-alt"></i> Ver Ubicación
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <div class="grid-footer">
+          <div class="footer-columna">
+            <img
+              src="img/logo.png"
+              alt="Distribuidora UniónJJ"
+              class="footer-logo"
+            />
+            <p>
+              Distribuidora de productos mixtos en Iquitos. Uniformes escolares,
+              snacks, bebidas y dulces. Alimenta con Amor.
+            </p>
+            <div class="redes-sociales">
+              <a href="#" aria-label="Facebook"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" aria-label="Instagram"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+              <a href="https://wa.me/51935971893" aria-label="WhatsApp"
+                ><i class="fab fa-whatsapp"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="footer-columna">
+            <h4>Enlaces</h4>
+            <ul>
+              <li><a href="index.html">Inicio</a></li>
+              <li><a href="nosotros.html">Nosotros</a></li>
+              <li><a href="servicios.html">Productos</a></li>
+              <li><a href="galeria.html">Galería</a></li>
+              <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-columna">
+            <h4>Productos</h4>
+            <ul>
+              <li><a href="servicios.html">Uniformes Escolares</a></li>
+              <li><a href="servicios.html">Snacks</a></li>
+              <li><a href="servicios.html">Bebidas</a></li>
+              <li><a href="servicios.html">Dulces y Postres</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-columna">
+            <h4>Contacto</h4>
+            <ul class="contacto-lista">
+              <li>
+                <i class="fas fa-map-marker-alt"></i
+                ><span>Putumayo 638<br />Iquitos, Perú</span>
+              </li>
+              <li>
+                <i class="fab fa-whatsapp"></i><span>+51 935 971 893</span>
+              </li>
+              <li>
+                <i class="fas fa-envelope"></i
+                ><span>unioniquitos.jj@gmail.com</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>
+            &copy; 2024 Distribuidora UniónJJ Iquitos. Todos los derechos
+            reservados.
+          </p>
+          <p>
+            Hecho con <i class="fas fa-heart" style="color: #ff0a0a"></i> en
+            Iquitos
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+    <script src="js/galeria.js"></script>
+  </body>
+</html>
