@@ -11,14 +11,30 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--blanco);
+    color: var(--negro);
+    line-height: 1.6;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
 :root {
-    /* Colores principales - ROJO VIVO Y BRILLANTE */
     --rojo: #FF0A0A;
     --rojo-oscuro: #E00000;
     --rojo-claro: #FF4040;
     --rojo-brillante: #FF2D2D;
-
-    /* Colores secundarios */
     --azul: #003049;
     --azul-claro: #457b9d;
     --azul-suave: #e8f1f5;
@@ -28,36 +44,16 @@
     --gris-texto: #555;
     --negro: #1a1a1a;
 
-    /* Gradientes */
     --gradiente-rojo: linear-gradient(135deg, #FF2D2D 0%, #E00000 100%);
-    --gradiente-rojo-brillante: linear-gradient(135deg, #FF4040 0%, #FF0A0A 100%);
     --gradiente-azul: linear-gradient(135deg, #003049 0%, #001a29 100%);
 
-    /* Sombras */
     --sombra-suave: 0 5px 20px rgba(0, 0, 0, 0.08);
     --sombra-media: 0 10px 40px rgba(0, 0, 0, 0.12);
     --sombra-fuerte: 0 20px 60px rgba(0, 0, 0, 0.2);
     --sombra-roja: 0 10px 40px rgba(255, 10, 10, 0.4);
-    --sombra-roja-hover: 0 15px 40px rgba(255, 10, 10, 0.6);
 
-    /* Transiciones */
     --transicion: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     --transicion-lenta: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-html {
-    scroll-behavior: smooth;
-    -webkit-text-size-adjust: 100%;
-}
-
-body {
-    font-family: 'Poppins', sans-serif;
-    background: var(--blanco);
-    color: var(--negro);
-    line-height: 1.6;
-    overflow-x: hidden;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
 }
 
 img {
@@ -70,6 +66,7 @@ img {
     max-width: 1250px;
     margin: 0 auto;
     padding: 0 20px;
+    width: 100%;
 }
 
 /* ============================================ */
@@ -100,7 +97,6 @@ img {
     gap: 20px;
 }
 
-/* Logo compuesto - imagen + texto */
 .logo {
     display: flex;
     align-items: center;
@@ -286,6 +282,7 @@ img {
     position: absolute;
     border-radius: 50%;
     z-index: 0;
+    pointer-events: none;
 }
 
 .hero-deco-1 {
@@ -580,11 +577,6 @@ img {
     50% { transform: translateY(-12px); }
 }
 
-@keyframes pulso {
-    0%, 100% { box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4); }
-    50% { box-shadow: 0 10px 30px rgba(37, 211, 102, 0.7), 0 0 0 15px rgba(37, 211, 102, 0.1); }
-}
-
 .reveal {
     opacity: 0;
     transform: translateY(40px);
@@ -697,6 +689,7 @@ img {
 .sobre-imagenes {
     position: relative;
     height: 500px;
+    width: 100%;
 }
 
 .placeholder-sobre-1 {
@@ -929,6 +922,7 @@ img {
     height: 600px;
     background: radial-gradient(circle, rgba(255, 10, 10, 0.15) 0%, transparent 70%);
     border-radius: 50%;
+    pointer-events: none;
 }
 
 .horarios .seccion-encabezado h2 {
@@ -1015,6 +1009,7 @@ img {
     height: 500px;
     background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
     border-radius: 50%;
+    pointer-events: none;
 }
 
 .cta-contenido {
@@ -1286,7 +1281,7 @@ img {
 }
 
 /* ============================================ */
-/* 15. NOSOTROS - INFO (VISIÓN, MISIÓN, VALORES, PROPÓSITO) */
+/* 15. NOSOTROS - INFO */
 /* ============================================ */
 .nosotros-info {
     padding: 100px 0;
@@ -1307,7 +1302,6 @@ img {
     pointer-events: none;
 }
 
-/* Grid para Visión y Misión */
 .info-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -1349,7 +1343,6 @@ img {
     border-color: var(--rojo);
 }
 
-/* Header de la card: icono + título en la misma fila */
 .info-header {
     display: flex;
     align-items: center;
@@ -1393,7 +1386,6 @@ img {
     margin: 0;
 }
 
-/* Sección de Valores */
 .grid-valores {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -1469,7 +1461,6 @@ img {
     line-height: 1.7;
 }
 
-/* Sección de Propósito */
 .proposito {
     background: var(--azul);
     border-radius: 20px;
@@ -1701,11 +1692,6 @@ img {
     z-index: 2;
 }
 
-.placeholder-galeria i {
-    font-size: 3rem;
-    transition: var(--transicion);
-}
-
 .galeria-completa-item:hover .placeholder-galeria i {
     transform: scale(1.15) rotate(-8deg);
     color: var(--rojo);
@@ -1931,6 +1917,7 @@ img {
     height: 500px;
     background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
     border-radius: 50%;
+    pointer-events: none;
 }
 
 .grid-estadisticas {
@@ -1966,7 +1953,133 @@ img {
 }
 
 /* ============================================ */
-/* 21. RESPONSIVE - LAPTOPS PEQUEÑAS Y TABLETS GRANDES */
+/* 21. CATÁLOGO DE PRODUCTOS */
+/* ============================================ */
+.catalogo {
+    padding: 100px 0;
+    background: var(--gris-claro);
+}
+
+.catalogo-categoria {
+    margin-bottom: 80px;
+}
+
+.catalogo-categoria:last-child {
+    margin-bottom: 0;
+}
+
+.catalogo-categoria-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 40px;
+    padding-bottom: 25px;
+    border-bottom: 3px solid var(--rojo);
+    position: relative;
+}
+
+.catalogo-categoria-header::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 100px;
+    height: 3px;
+    background: var(--rojo-oscuro);
+}
+
+.catalogo-categoria-icono {
+    width: 70px;
+    height: 70px;
+    background: var(--gradiente-rojo);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--blanco);
+    font-size: 1.8rem;
+    flex-shrink: 0;
+    box-shadow: 0 10px 25px rgba(255, 10, 10, 0.3);
+}
+
+.catalogo-categoria-header h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2rem;
+    color: var(--azul);
+    margin-bottom: 5px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.catalogo-categoria-header p {
+    color: var(--gris-texto);
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+.catalogo-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.catalogo-item {
+    background: var(--blanco);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--sombra-suave);
+    transition: var(--transicion);
+    cursor: pointer;
+    border: 1px solid var(--gris-medio);
+}
+
+.catalogo-item:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--sombra-roja);
+    border-color: var(--rojo);
+}
+
+.catalogo-imagen {
+    aspect-ratio: 1;
+    overflow: hidden;
+    position: relative;
+    background: linear-gradient(135deg, #e8eef5 0%, #d4e0eb 100%);
+}
+
+.catalogo-imagen .placeholder-img {
+    width: 100%;
+    height: 100%;
+}
+
+.catalogo-imagen .placeholder-img i {
+    font-size: 3rem;
+    transition: var(--transicion);
+}
+
+.catalogo-item:hover .placeholder-img i {
+    transform: scale(1.15) rotate(-8deg);
+    color: var(--rojo);
+    opacity: 0.9;
+}
+
+.catalogo-item h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+    color: var(--azul);
+    font-weight: 600;
+    text-align: center;
+    padding: 18px 15px;
+    margin: 0;
+    transition: var(--transicion);
+    line-height: 1.3;
+}
+
+.catalogo-item:hover h3 {
+    color: var(--rojo);
+}
+
+/* ============================================ */
+/* 22. RESPONSIVE - LAPTOPS Y TABLETS GRANDES */
 /* ============================================ */
 @media (max-width: 1200px) {
     .hero-titulo { font-size: 3.8rem; }
@@ -1977,12 +2090,11 @@ img {
 }
 
 /* ============================================ */
-/* 22. RESPONSIVE - TABLETS */
+/* 23. RESPONSIVE - TABLETS */
 /* ============================================ */
 @media (max-width: 992px) {
     .container { padding: 0 25px; }
 
-    /* Header */
     .logo-marca { width: 46px; height: 46px; }
     .logo-marca-nombre { font-size: 1.25rem; }
     .logo-nombre { font-size: 0.55rem; }
@@ -1991,45 +2103,29 @@ img {
     .nav-menu a { font-size: 0.9rem; }
     .btn-whatsapp-header { padding: 10px 18px; font-size: 0.85rem; }
 
-    /* Hero */
     .hero { padding: 120px 0 70px; }
     .hero-titulo { font-size: 3.4rem; }
     .hero-descripcion { font-size: 1rem; }
 
-    /* Beneficios */
     .grid-beneficios { gap: 25px; }
     .beneficio-icono { width: 60px; height: 60px; font-size: 1.4rem; }
     .beneficio-item h3 { font-size: 1rem; }
     .beneficio-item p { font-size: 0.85rem; }
 
-    /* Categorías */
     .grid-categorias { gap: 25px; }
     .categoria-card { padding: 35px 25px; }
     .categoria-icono { width: 70px; height: 70px; font-size: 1.7rem; }
 
-    /* Sobre */
     .sobre-grid { gap: 50px; }
     .sobre-texto h2 { font-size: 2rem; }
 
-    /* Sección encabezado */
     .seccion-encabezado h2 { font-size: 2.3rem; }
-
-    /* Página interna hero */
     .pagina-hero-contenido h1 { font-size: 3rem; }
 
-    /* Nosotros Info */
-    .info-grid {
-        grid-template-columns: 1fr;
-        gap: 25px;
-    }
-    .grid-valores {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .proposito {
-        padding: 50px 35px;
-    }
+    .info-grid { grid-template-columns: 1fr; gap: 25px; }
+    .grid-valores { grid-template-columns: repeat(2, 1fr); }
+    .proposito { padding: 50px 35px; }
 
-    /* Servicios */
     .servicio-item {
         grid-template-columns: 1fr;
         text-align: center;
@@ -2039,19 +2135,19 @@ img {
     .servicio-item-icono { margin: 0 auto; }
     .servicio-item-detalles { justify-content: center; }
 
-    /* Galería */
     .galeria-filtros { position: static; }
     .galeria-grid-completo { grid-template-columns: repeat(2, 1fr); }
 
-    /* Estadísticas */
     .grid-estadisticas { grid-template-columns: repeat(2, 1fr); gap: 40px; }
-
-    /* Contacto */
     .contacto-grid { grid-template-columns: 1fr; gap: 30px; }
+
+    .catalogo-grid { grid-template-columns: repeat(2, 1fr); gap: 25px; max-width: 700px; margin: 0 auto; }
+    .catalogo-categoria-header h2 { font-size: 1.7rem; }
+    .catalogo-categoria-icono { width: 60px; height: 60px; font-size: 1.5rem; }
 }
 
 /* ============================================ */
-/* 23. RESPONSIVE - MÓVILES GRANDES */
+/* 24. RESPONSIVE - MÓVILES GRANDES */
 /* ============================================ */
 @media (max-width: 768px) {
     .container { padding: 0 20px; }
@@ -2136,6 +2232,12 @@ img {
     .badge-numero { font-size: 1.7rem; }
     .badge-texto { font-size: 0.65rem; }
 
+    /* Ocultar decoraciones del hero en móvil para evitar overflow */
+    .hero-deco-1,
+    .hero-deco-2 {
+        display: none;
+    }
+
     /* SECCIONES */
     .seccion-encabezado { margin-bottom: 40px; }
     .seccion-encabezado h2 { font-size: 2rem; }
@@ -2151,7 +2253,7 @@ img {
     .beneficio-item { padding: 25px 20px; }
     .beneficio-icono { width: 60px; height: 60px; font-size: 1.5rem; margin-bottom: 18px; }
 
-    /* SOBRE */
+    /* SOBRE - FIX DEL ESPACIO VACÍO */
     .sobre-preview { padding: 60px 0; }
     .sobre-grid {
         grid-template-columns: 1fr;
@@ -2160,14 +2262,30 @@ img {
     }
     .sobre-texto h2 { font-size: 1.8rem; }
     .sobre-texto p { font-size: 0.95rem; }
+
+    /* SOLUCIÓN: Simplificar las imágenes en móvil */
     .sobre-imagenes {
-    position: relative;
-    height: auto;
-    min-height: 320px;
-    max-width: 400px;
-    margin: 0 auto;
-    aspect-ratio: 4/3;
-}
+        position: relative;
+        height: auto;
+        aspect-ratio: 1 / 1;
+        max-width: 340px;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    /* En móvil, mostrar solo una imagen grande y ocultar la segunda */
+    .placeholder-sobre-1 {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+
+    .placeholder-sobre-2 {
+        display: none;
+    }
+
     .sobre-lista {
         grid-template-columns: 1fr;
         text-align: left;
@@ -2286,15 +2404,32 @@ img {
     .contacto-info h2, .contacto-formulario h2 { font-size: 1.5rem; }
     .mapa-contenedor iframe { height: 350px; }
 
-    /* Forzar que las imágenes sobre se vean siempre */
-.sobre-imagenes.reveal {
-    opacity: 1 !important;
-    transform: translateY(0) !important;
-}
+    /* CATÁLOGO DE PRODUCTOS */
+    .catalogo { padding: 60px 0; }
+    .catalogo-categoria { margin-bottom: 60px; }
+    .catalogo-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
+
+    /* MANTENER icono + texto al lado en móvil */
+    .catalogo-categoria-header {
+        gap: 15px;
+        margin-bottom: 30px;
+        padding-bottom: 20px;
+        align-items: center;
+    }
+    .catalogo-categoria-icono {
+        width: 55px;
+        height: 55px;
+        font-size: 1.4rem;
+        border-radius: 15px;
+    }
+    .catalogo-categoria-header h2 { font-size: 1.4rem; }
+    .catalogo-categoria-header p { font-size: 0.85rem; }
+
+    .catalogo-item h3 { font-size: 0.9rem; padding: 14px 10px; }
 }
 
 /* ============================================ */
-/* 24. RESPONSIVE - MÓVILES PEQUEÑOS */
+/* 25. RESPONSIVE - MÓVILES PEQUEÑOS */
 /* ============================================ */
 @media (max-width: 480px) {
     .container { padding: 0 15px; }
@@ -2339,7 +2474,10 @@ img {
     /* SOBRE */
     .sobre-texto h2 { font-size: 1.5rem; }
     .sobre-texto p { font-size: 0.9rem; }
-    .sobre-imagenes { height: 260px; }
+    .sobre-imagenes {
+        max-width: 280px;
+        aspect-ratio: 1 / 1;
+    }
 
     /* CATEGORÍAS */
     .categoria-card { padding: 30px 20px; }
@@ -2393,230 +2531,30 @@ img {
     /* CONTACTO */
     .contacto-info, .contacto-formulario { padding: 25px 20px; }
     .mapa-contenedor iframe { height: 280px; }
-}
 
-/* ============================================ */
-/* 25. CATÁLOGO DE PRODUCTOS */
-/* ============================================ */
-.catalogo {
-    padding: 100px 0;
-    background: var(--gris-claro);
-}
-
-.catalogo-categoria {
-    margin-bottom: 80px;
-}
-
-.catalogo-categoria:last-child {
-    margin-bottom: 0;
-}
-
-/* Header de cada categoría */
-.catalogo-categoria-header {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    margin-bottom: 40px;
-    padding-bottom: 25px;
-    border-bottom: 3px solid var(--rojo);
-    position: relative;
-}
-
-.catalogo-categoria-header::after {
-    content: '';
-    position: absolute;
-    bottom: -3px;
-    left: 0;
-    width: 100px;
-    height: 3px;
-    background: var(--rojo-oscuro);
-}
-
-.catalogo-categoria-icono {
-    width: 70px;
-    height: 70px;
-    background: var(--gradiente-rojo);
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--blanco);
-    font-size: 1.8rem;
-    flex-shrink: 0;
-    box-shadow: 0 10px 25px rgba(255, 10, 10, 0.3);
-}
-
-.catalogo-categoria-header h2 {
-    font-family: 'Oswald', sans-serif;
-    font-size: 2rem;
-    color: var(--azul);
-    margin-bottom: 5px;
-    font-weight: 700;
-    letter-spacing: -0.5px;
-}
-
-.catalogo-categoria-header p {
-    color: var(--gris-texto);
-    font-size: 0.95rem;
-    margin: 0;
-}
-
-/* Grid de productos */
-.catalogo-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 25px;
-}
-
-.catalogo-item {
-    background: var(--blanco);
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: var(--sombra-suave);
-    transition: var(--transicion);
-    cursor: pointer;
-    border: 1px solid var(--gris-medio);
-}
-
-.catalogo-item:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--sombra-roja);
-    border-color: var(--rojo);
-}
-
-.catalogo-imagen {
-    aspect-ratio: 1;
-    overflow: hidden;
-    position: relative;
-    background: linear-gradient(135deg, #e8eef5 0%, #d4e0eb 100%);
-}
-
-.catalogo-imagen .placeholder-img {
-    width: 100%;
-    height: 100%;
-}
-
-.catalogo-imagen .placeholder-img i {
-    font-size: 3rem;
-    transition: var(--transicion);
-}
-
-.catalogo-item:hover .placeholder-img i {
-    transform: scale(1.15) rotate(-8deg);
-    color: var(--rojo);
-    opacity: 0.9;
-}
-
-.catalogo-item h3 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 0.95rem;
-    color: var(--azul);
-    font-weight: 600;
-    text-align: center;
-    padding: 18px 15px;
-    margin: 0;
-    transition: var(--transicion);
-    line-height: 1.3;
-    display: block;
-    width: 100%;
-}
-
-.catalogo-item:hover h3 {
-    color: var(--rojo);
-}
-
-/* ============================================ */
-/* RESPONSIVE - CATÁLOGO */
-/* ============================================ */
-@media (max-width: 992px) {
-    .catalogo-grid { grid-template-columns: repeat(2, 1fr); gap: 25px; max-width: 700px; margin: 0 auto; }
-    .catalogo-categoria-header h2 { font-size: 1.7rem; }
-    .catalogo-categoria-icono { width: 60px; height: 60px; font-size: 1.5rem; }
-}
-
-@media (max-width: 768px) {
-    .catalogo { padding: 60px 0; }
-    .catalogo-categoria { margin-bottom: 60px; }
-    .catalogo-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
-    
-    .catalogo-categoria-header {
-        gap: 15px;
-        margin-bottom: 30px;
-        padding-bottom: 20px;
-    }
-    .catalogo-categoria-icono {
-        width: 55px;
-        height: 55px;
-        font-size: 1.4rem;
-        border-radius: 15px;
-    }
-    .catalogo-categoria-header h2 { font-size: 1.5rem; }
-    .catalogo-categoria-header p { font-size: 0.85rem; }
-    
-    .catalogo-item h3 { font-size: 0.9rem; padding: 14px 10px; }
-
-    /* ========== FIX SOBRE NOSOTROS ========== */
-.sobre-imagenes {
-    position: relative;
-    height: auto;
-    min-height: 320px;
-    max-width: 400px;
-    margin: 0 auto;
-    aspect-ratio: 4/3;
-}
-
-.sobre-imagenes.reveal {
-    opacity: 1 !important;
-    transform: translateY(0) !important;
-}
-}
-
-@media (max-width: 480px) {
+    /* CATÁLOGO */
     .catalogo { padding: 50px 0; }
     .catalogo-categoria { margin-bottom: 50px; }
-    .catalogo-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
-    
+    .catalogo-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+
+    /* MANTENER icono a la izquierda + texto a la derecha */
     .catalogo-categoria-header {
-        flex-direction: column;
-        align-items: flex-start;
         gap: 12px;
+        margin-bottom: 25px;
+        padding-bottom: 15px;
+        align-items: center;
     }
     .catalogo-categoria-icono {
-        width: 50px;
-        height: 50px;
+        width: 48px;
+        height: 48px;
         font-size: 1.2rem;
         border-radius: 12px;
     }
-    .catalogo-categoria-header h2 { font-size: 1.3rem; }
-    .catalogo-categoria-header p { font-size: 0.8rem; }
-    
-    .catalogo-item h3 { font-size: 0.85rem; padding: 12px 8px; }
+    .catalogo-categoria-header h2 { font-size: 1.2rem; margin-bottom: 2px; }
+    .catalogo-categoria-header p { font-size: 0.75rem; line-height: 1.3; }
 
-   /* ========== FIX CATÁLOGO EN MÓVIL ========== */
-.catalogo-item {
-    display: flex;
-    flex-direction: column;
-}
-
-.catalogo-imagen {
-    width: 100%;
-}
-
-.catalogo-item h3 {
-    font-size: 0.8rem;
-    padding: 12px 6px;
-    white-space: normal;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    hyphens: auto;
-}
-
-.catalogo-imagen .placeholder-img span {
-    display: none;
-}
-
-.catalogo-imagen .placeholder-img i {
-    font-size: 3.5rem;
-}
- 
+    .catalogo-item h3 {
+        font-size: 0.8rem;
+        padding: 12px 8px;
+    }
 }
