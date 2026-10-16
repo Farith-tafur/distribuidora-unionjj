@@ -2161,10 +2161,13 @@ img {
     .sobre-texto h2 { font-size: 1.8rem; }
     .sobre-texto p { font-size: 0.95rem; }
     .sobre-imagenes {
-        height: 320px;
-        max-width: 400px;
-        margin: 0 auto;
-    }
+    position: relative;
+    height: auto;
+    min-height: 320px;
+    max-width: 400px;
+    margin: 0 auto;
+    aspect-ratio: 4/3;
+}
     .sobre-lista {
         grid-template-columns: 1fr;
         text-align: left;
@@ -2282,6 +2285,12 @@ img {
     .contacto-info, .contacto-formulario { padding: 30px 25px; }
     .contacto-info h2, .contacto-formulario h2 { font-size: 1.5rem; }
     .mapa-contenedor iframe { height: 350px; }
+
+    /* Forzar que las imágenes sobre se vean siempre */
+.sobre-imagenes.reveal {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
 }
 
 /* ============================================ */
@@ -2508,6 +2517,8 @@ img {
     margin: 0;
     transition: var(--transicion);
     line-height: 1.3;
+    display: block;
+    width: 100%;
 }
 
 .catalogo-item:hover h3 {
@@ -2543,6 +2554,21 @@ img {
     .catalogo-categoria-header p { font-size: 0.85rem; }
     
     .catalogo-item h3 { font-size: 0.9rem; padding: 14px 10px; }
+
+    /* ========== FIX SOBRE NOSOTROS ========== */
+.sobre-imagenes {
+    position: relative;
+    height: auto;
+    min-height: 320px;
+    max-width: 400px;
+    margin: 0 auto;
+    aspect-ratio: 4/3;
+}
+
+.sobre-imagenes.reveal {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
 }
 
 @media (max-width: 480px) {
@@ -2565,4 +2591,30 @@ img {
     .catalogo-categoria-header p { font-size: 0.8rem; }
     
     .catalogo-item h3 { font-size: 0.85rem; padding: 12px 8px; }
+
+   /* ========== FIX CATÁLOGO EN MÓVIL ========== */
+.catalogo-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.catalogo-imagen {
+    width: 100%;
+}
+
+.catalogo-item h3 {
+    font-size: 0.8rem;
+    padding: 12px 6px;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
+
+.catalogo-imagen .placeholder-img span {
+    display: none;
+}
+
+.catalogo-imagen .placeholder-img i {
+    font-size: 3.5rem;
 }
