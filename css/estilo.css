@@ -789,6 +789,9 @@ img {
 }
 
 .categoria-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     background: var(--blanco);
     border: 1px solid var(--gris-medio);
     border-radius: 20px;
@@ -797,6 +800,9 @@ img {
     transition: var(--transicion);
     position: relative;
     overflow: hidden;
+    text-decoration: none; /* Quita el subrayado de enlace */
+    color: inherit; /* Mantiene los colores originales del texto */
+    height: 100%; /* Para que todas las tarjetas midan lo mismo */
 }
 
 .categoria-card::before {
