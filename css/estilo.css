@@ -800,9 +800,9 @@ img {
     transition: var(--transicion);
     position: relative;
     overflow: hidden;
-    text-decoration: none; /* Quita el subrayado de enlace */
-    color: inherit; /* Mantiene los colores originales del texto */
-    height: 100%; /* Para que todas las tarjetas midan lo mismo */
+    text-decoration: none;
+    color: inherit;
+    height: 100%;
 }
 
 .categoria-card::before {
@@ -2563,4 +2563,11 @@ img {
         font-size: 0.8rem;
         padding: 12px 8px;
     }
+}
+
+/* ============================================ */
+/* 26. FIX ANCLAS - EVITAR QUE EL HEADER TAPE EL TITULO */
+/* ============================================ */
+#uniformes, #snacks, #bebidas, #dulces {
+    scroll-margin-top: 100px; 
 }
