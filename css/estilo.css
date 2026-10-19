@@ -870,8 +870,8 @@ img {
 }
 
 .categorias-cta .btn-primario {
-    display: inline-flex !important; /* Esto permite que se centre con text-align */
-    margin: 0 auto !important; /* Refuerzo de centrado */
+    display: inline-flex !important;
+    margin: 0 auto !important;
 }
 
 /* ============================================ */
@@ -2419,10 +2419,31 @@ img {
     .contacto-info h2, .contacto-formulario h2 { font-size: 1.5rem; }
     .mapa-contenedor iframe { height: 350px; }
 
-    /* CATÁLOGO DE PRODUCTOS */
+    /* CATÁLOGO DE PRODUCTOS - MODO CARRUSEL EN MÓVIL */
     .catalogo { padding: 60px 0; }
     .catalogo-categoria { margin-bottom: 60px; }
-    .catalogo-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
+    
+    /* FIX MÁGICO: Carrusel horizontal para los productos */
+    .catalogo-grid {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        scroll-snap-type: x mandatory !important;
+        -webkit-overflow-scrolling: touch;
+        gap: 15px !important;
+        padding: 10px 0 20px 0 !important; /* Espacio para sombras */
+        scrollbar-width: none;
+        margin: 0 !important;
+    }
+
+    .catalogo-grid::-webkit-scrollbar { display: none; }
+
+    .catalogo-item {
+        flex: 0 0 85% !important;
+        scroll-snap-align: center !important;
+        display: flex;
+        flex-direction: column;
+    }
 
     /* MANTENER icono + texto al lado en móvil */
     .catalogo-categoria-header {
@@ -2550,7 +2571,6 @@ img {
     /* CATÁLOGO */
     .catalogo { padding: 50px 0; }
     .catalogo-categoria { margin-bottom: 50px; }
-    .catalogo-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
 
     /* MANTENER icono a la izquierda + texto a la derecha */
     .catalogo-categoria-header {
@@ -2582,40 +2602,34 @@ img {
 }
 
 /* ============================================ */
-/* 27. CARRUSEL DE IMÁGENES EN PRODUCTOS */
+/* 27. IMÁGENES DE LIBROS (ESTÁTICAS, NO CARRUSEL) */
 /* ============================================ */
+/* 
+   Aquí estaba el problema. Al quitarle el overflow-x: auto,
+   el celular ya no intentará deslizar la foto, sino que 
+   moverá la tarjeta entera.
+*/
 .carrusel-imagenes {
     display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch; /* Scroll suave en iOS */
     width: 100%;
     height: 100%;
-    scrollbar-width: none; /* Oculta la barra en Firefox */
-}
-
-.carrusel-imagenes::-webkit-scrollbar {
-    display: none; /* Oculta la barra en Chrome/Safari */
+    overflow: hidden; /* Bloquea el swipe interno */
 }
 
 .carrusel-item {
     flex: 0 0 100%;
     width: 100%;
     height: 100%;
-    scroll-snap-align: center;
     position: relative;
 }
 
-/* Ajuste para que los placeholders dentro del carrusel se vean bien */
-.carrusel-item .placeholder-img {
-    border-radius: 0;
-    border: none;
+/* Ocultamos todas las fotos excepto la primera (Portada) */
+.carrusel-item:not(:first-child) {
+    display: none;
 }
 
-/* Si usas imágenes reales en lugar de placeholders, asegúrate de que encajen */
-.carrusel-item img {
+.carrusel-item .placeholder-img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    display: block;
+    border-radius: 0;
 }
